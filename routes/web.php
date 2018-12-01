@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test/{id}', function ($id) {
-	return "ID Number: " . $id;
+Route::get('/test/{id}/{name}', function ($id,$name) {
+	return "ID Number: " . $id . ", from " . $name;
 });
