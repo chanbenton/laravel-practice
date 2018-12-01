@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/test/{id}', function ($id) {
-	return $id;
+	return "ID Number: " . $id;
 });
