@@ -11,6 +11,10 @@
 |
 */
 
+// Restricts all usages of 'id' to numbers only
+Route::pattern('id', '[0-9]+');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,13 +24,20 @@ Route::get('/test/{id}/{name}', function ($id,$name) {
 	return "ID Number: " . $id . ", from " . $name;
 });
 
-// Optional params
+// Optional params, enables /user to work
 Route::get('user/{name?}', function($name = null) {
     return $name;
 });
+// // '/user' would not work below standalone
+// Route::get('user/{name}', function($name) {
+//     return $name;
+// });
 
-Route::get('/admin/posts/example', array('as'=>'admin.home', function () {
-	$url = route('admin.home');
+
+
+// Aliasing URLs
+Route::get('/admin/posts/example', array('as'=>'page.home', function () {
+	$url = route('page.home');
 	return "this url is ". $url;
 }));
 
