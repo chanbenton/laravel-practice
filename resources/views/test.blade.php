@@ -2,5 +2,12 @@
 
 @section('content')
     <h1>Post page!</h1>
-    <h2>{{$id}} {{$name}} </h2> 
+    
+    @if (count($people))
+        <ul>
+            @foreach($people as $person)
+                <li>{{$person}}</li>
+            @endforeach
+        </ul>
+    @endif
 @stop

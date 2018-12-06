@@ -14,9 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $id = 1;
-        $name = 'Hello';
-        return view('test',compact('id','name'));
+        $people = ['asdf'];
+        return view('test',compact('people'));
     }
 
     /**
